@@ -92,3 +92,27 @@ t.Fatalf("file download error: %s", err.Error())
 }
 io.Copy(f, r)
 ```
+
+- move file
+
+```go
+client.MoveFile(gosdk.File{
+Bucket: "bucket",
+Key:    "sdks/client.go",
+}, gosdk.File{
+Bucket: "bucket",
+Key:    "sdks/xxx.go",
+})
+```
+
+- copy file
+
+```go
+client.CopyFile(gosdk.File{
+Bucket: "bucket",
+Key:    "sdks/client.go",
+}, gosdk.File{
+Bucket: "bucket",
+Key:    "sdks/xxx.go",
+})
+```
